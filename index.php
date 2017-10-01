@@ -12,20 +12,20 @@
 		<h2 style="position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%);">KanColle leveling round counter - Decreasing type</h2>
 		<div style="position: relative; height: 100%; width: 100%;">
 			<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid whitesmoke; border-radius: 6px; padding: 3rem; width: 52.6%;">
-				<button class="btn btn-default" id="save" onclick="save();" style="display: inline-block; margin-right: 1rem;">
+				<button class="btn btn-default" id="save" onclick="save();" style="display: inline-block; margin-right: 1rem; margin-bottom: 1rem;">
 					<i class="fa fa-floppy-o" style="margin-right: 1rem;"></i>Save
 				</button>
-				<button class="btn btn-default" id="load" onclick="load();" style="display: inline-block; margin-right: 1rem;">
+				<button class="btn btn-default" id="load" onclick="load();" style="display: inline-block; margin-right: 1rem; margin-bottom: 1rem;">
 					<i class="fa fa-recycle" style="margin-right: 1rem;"></i>Load
 				</button>
-				<button class="btn btn-primary" id="reset" onclick="reset();" style="display: inline-block; margin-right: 1rem;">
+				<button class="btn btn-primary" id="reset" onclick="reset();" style="display: inline-block; margin-right: 1rem; margin-bottom: 1rem;">
 					<i class="fa fa-refresh" style="margin-right: 1rem;"></i>Reset
 				</button>
-				<input type="number" id="input-counter" class="form-control" style="display: inline-block; margin-right: 1rem; width: initial;" value="12" />
-				<button class="btn btn-success" onclick="minus();" style="display: inline-block; margin-right: 1rem;">
+				<input type="number" id="input-counter" class="form-control" style="display: inline-block; margin-right: 1rem; margin-bottom: 1rem; width: initial;" value="12" />
+				<button class="btn btn-success" onclick="minus();" style="display: inline-block; margin-right: 1rem; margin-bottom: 1rem;">
 					<i class="fa fa-minus" style="margin-right: 1rem;"></i>Minus
 				</button>
-				<button class="btn btn-warning" onclick="plus();" style="display: inline-block;">
+				<button class="btn btn-warning" onclick="plus();" style="display: inline-block; margin-bottom: 1rem;">
 					<i class="fa fa-plus" style="margin-right: 1rem;"></i>Plus
 				</button>
 			</div>
