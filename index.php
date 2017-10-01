@@ -9,9 +9,11 @@
 		<title>KanColle leveling round counter - Decreasing type</title>
 	</head>
 	<body style="font-size: 16px;">
-		<h2 style="position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%);">KanColle leveling round counter - Decreasing type</h2>
-		<div style="position: relative; height: 100%; width: 100%;">
-			<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid whitesmoke; border-radius: 6px; padding: 3rem; width: 52.6%;">
+		<h2 id="title" style="position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); z-index: 3; color: white;">
+			KanColle leveling round counter - Decreasing type
+		</h2>
+		<div id="container" style="position: relative; height: 100%; width: 100%; background: black; z-index: 1;">
+			<div id="panel-wrap" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid whitesmoke; border-radius: 6px; padding: 3rem; width: 52.6%; background: lightgrey;">
 				<button class="btn btn-default" id="save" onclick="save();" style="display: inline-block; margin-right: 1rem; margin-bottom: 1rem;">
 					<i class="fa fa-floppy-o" style="margin-right: 1rem;"></i>Save
 				</button>
@@ -21,20 +23,104 @@
 				<button class="btn btn-primary" id="reset" onclick="reset();" style="display: inline-block; margin-right: 1rem; margin-bottom: 1rem;">
 					<i class="fa fa-refresh" style="margin-right: 1rem;"></i>Reset
 				</button>
-				<input type="number" id="input-counter" class="form-control" style="display: inline-block; margin-right: 1rem; margin-bottom: 1rem; width: initial;" value="12" />
+				<input type="number" id="input-counter" class="form-control" 
+					   style="display: inline-block; margin-right: 1rem; margin-bottom: 1rem; width: initial; vertical-align: middle;" 
+					   value="12" />
 				<button class="btn btn-success" onclick="minus();" style="display: inline-block; margin-right: 1rem; margin-bottom: 1rem;">
 					<i class="fa fa-minus" style="margin-right: 1rem;"></i>Minus
 				</button>
 				<button class="btn btn-warning" onclick="plus();" style="display: inline-block; margin-bottom: 1rem;">
 					<i class="fa fa-plus" style="margin-right: 1rem;"></i>Plus
 				</button>
+				<br />
+				<div style="width: 100%; text-align: center;">
+					<button class="btn btn-default" onclick="shiftmode();" id="shiftmode" style="margin: auto;">
+						<i class="fa fa-moon-o" style="margin-right: 1rem;"></i>Night mode
+					</button>
+				</div>
 			</div>
-			<h3 id="message-outpost" style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%);"></h3>
+			<h3 id="message-outpost" style="position: absolute; top: 65%; left: 50%; transform: translate(-50%, -50%); z-index: 2;"></h3>
 		</div>
 		<div id="dialog"></div>
 	</body>
 </html>
 <script>
+$(document).on("ready", function(){
+	var sb = $("#shiftmode");
+	var c = $("#container");
+	var pw = $("#panel-wrap");
+	var t = $("#title");
+	var mo = $("#message-outpost");
+	var v = localStorage.getItem("bgmode");
+	
+	switch(v){
+		case "normal": {
+			sb.css("filter", "");
+			c.css("background", "white");
+			pw.css("background", "lightgrey");
+			t.css("color", "black");
+			mo.css("color", "black");
+			localStorage.setItem("bgmode", "normal");
+			break;
+		}
+		case "night": {
+			sb.css("filter", "invert(100%)");
+			c.css("background", "#263947");
+			pw.css("background", "#68868E");
+			t.css("color", "white");
+			mo.css("color", "white");
+			localStorage.setItem("bgmode", "night");
+			break;
+		}
+		default: {
+			sb.css("filter", "");
+			c.css("background", "white");
+			pw.css("background", "lightgrey");
+			t.css("color", "black");
+			localStorage.setItem("bgmode", "normal");
+			break;
+		}
+	}
+});
+	
+function shiftmode() {
+	var sb = $("#shiftmode");
+	var c = $("#container");
+	var pw = $("#panel-wrap");
+	var t = $("#title");
+	var mo = $("#message-outpost");
+	var v = localStorage.getItem("bgmode");
+	
+	switch(v){
+		case "normal": {
+			sb.css("filter", "invert(100%)");
+			c.css("background", "#263947");
+			pw.css("background", "#68868E");
+			t.css("color", "white");
+			mo.css("color", "white");
+			localStorage.setItem("bgmode", "night");
+			break;
+		}
+		case "night": {
+			sb.css("filter", "");
+			c.css("background", "white");
+			pw.css("background", "lightgrey");
+			t.css("color", "black");
+			mo.css("color", "black");
+			localStorage.setItem("bgmode", "normal");
+			break;
+		}
+		default: {
+			sb.css("filter", "");
+			c.css("background", "white");
+			pw.css("background", "lightgrey");
+			t.css("color", "black");
+			localStorage.setItem("bgmode", "normal");
+			break;
+		}
+	}
+}	
+	
 function save(){
 	var ic = $("#input-counter");
 	var mo = $("#message-outpost");
