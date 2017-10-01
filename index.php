@@ -26,10 +26,10 @@
 				<input type="number" id="input-counter" class="form-control" 
 					   style="display: inline-block; margin-right: 1rem; margin-bottom: 1rem; width: initial; vertical-align: middle;" 
 					   value="12" />
-				<button class="btn btn-success" onclick="minus();" style="display: inline-block; margin-right: 1rem; margin-bottom: 1rem;">
+				<button class="btn btn-success" id="minus" onclick="minus();" style="display: inline-block; margin-right: 1rem; margin-bottom: 1rem;">
 					<i class="fa fa-minus" style="margin-right: 1rem;"></i>Minus
 				</button>
-				<button class="btn btn-warning" onclick="plus();" style="display: inline-block; margin-bottom: 1rem;">
+				<button class="btn btn-warning" id="plus" onclick="plus();" style="display: inline-block; margin-bottom: 1rem;">
 					<i class="fa fa-plus" style="margin-right: 1rem;"></i>Plus
 				</button>
 				<br />
@@ -226,6 +226,8 @@ function disabled(){
 	var s = $("#save");
 	var l = $("#load");
 	var r = $("#reset");
+	var m = $("#minus");
+	var p = $("#plus");
 	
 	s.attr({
 		"onclick": "",
@@ -239,12 +241,22 @@ function disabled(){
 		"onclick": "",
 		"class": r.attr("class")+" disabled",
 	});
+	m.attr({
+		"onclick": "",
+		"class": m.attr("class")+" disabled",
+	});
+	p.attr({
+		"onclick": "",
+		"class": p.attr("class")+" disabled",
+	});
 }
 	
 function enabled(){
 	var s = $("#save");
 	var l = $("#load");
 	var r = $("#reset");
+	var m = $("#minus");
+	var p = $("#plus");
 	
 	s.attr({
 		"onclick": "save();",
@@ -257,6 +269,14 @@ function enabled(){
 	r.attr({
 		"onclick": "reset();",
 		"class": "btn btn-primary",
+	});
+	m.attr({
+		"onclick": "minus();",
+		"class": "btn btn-warning",
+	});
+	p.attr({
+		"onclick": "plus();",
+		"class": "btn btn-success",
 	});
 }
 </script>
