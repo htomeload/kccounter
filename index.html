@@ -23,9 +23,9 @@
 				<button class="btn btn-primary" id="reset" onclick="reset();" style="display: inline-block; margin-right: 1rem; margin-bottom: 1rem;">
 					<i class="fa fa-refresh" style="margin-right: 1rem;"></i>Reset
 				</button>
-				<input type="number" id="input-counter" class="form-control" 
+				<input type="number" id="input-counter" class="form-control" min="0" 
 					   style="display: inline-block; margin-right: 1rem; margin-bottom: 1rem; width: initial; vertical-align: middle;" 
-					   value="12" />
+					   value="12" onchange="checkvalue(event);" onkeyup="checkvalue(event);" onblur="checknull(event);" />
 				<button class="btn btn-success" id="minus" onclick="minus();" style="display: inline-block; margin-right: 1rem; margin-bottom: 1rem;">
 					<i class="fa fa-minus" style="margin-right: 1rem;"></i>Minus
 				</button>
@@ -120,6 +120,24 @@ function shiftmode() {
 		}
 	}
 }	
+	
+function checkvalue(event){
+	var v = event.target.value;
+	var ic = $("#input-counter");
+	
+	if (v < 0){
+		ic.val(0);
+	}
+}
+	
+function checknull(event){
+	var v = event.target.value;
+	var ic = $("#input-counter");
+	
+	if (v == '' || v == null){
+		ic.val(0);
+	}
+}
 	
 function save(){
 	var ic = $("#input-counter");
@@ -228,6 +246,7 @@ function disabled(){
 	var r = $("#reset");
 	var m = $("#minus");
 	var p = $("#plus");
+	var ic = $("#input-counter");
 	
 	s.attr({
 		"onclick": "",
@@ -249,6 +268,10 @@ function disabled(){
 		"onclick": "",
 		"class": p.attr("class")+" disabled",
 	});
+	ic.attr({
+		"disabled": "disabled",
+		"readonly": "readonly",
+	});
 }
 	
 function enabled(){
@@ -257,6 +280,7 @@ function enabled(){
 	var r = $("#reset");
 	var m = $("#minus");
 	var p = $("#plus");
+	var ic = $("#input-counter");
 	
 	s.attr({
 		"onclick": "save();",
@@ -277,6 +301,10 @@ function enabled(){
 	p.attr({
 		"onclick": "plus();",
 		"class": "btn btn-success",
+	});
+	ic.attr({
+		"disabled": false,
+		"readonly": false,
 	});
 }
 </script>
