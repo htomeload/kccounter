@@ -9,7 +9,7 @@
 		<title>KanColle leveling round counter - Decreasing type</title>
 	</head>
 	<body style="font-size: 16px;">
-		<h2 id="title" style="position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); z-index: 3; color: white;">
+		<h2 id="title" style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); z-index: 3; color: white;">
 			KanColle leveling round counter - Decreasing type
 		</h2>
 		<div id="container" style="position: relative; height: 100%; width: 100%; background: black; z-index: 1;">
