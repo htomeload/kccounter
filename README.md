@@ -7,7 +7,7 @@ Use as counter helper when leveling kanmasu in online browser game "KanColle". F
 * *No internet is required.
 
 Note
-* No internet is required but required server environments to operate, you may use software like XAMPP, AppServ or similars to create local server environments then this project can be operated.
+* No internet is required but required server environments to operate, you may use software like XAMPP, AppServ or similar to create local server environments then this project can be operated.
 
 May adding more feature in future.
 
