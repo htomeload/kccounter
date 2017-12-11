@@ -4,6 +4,7 @@ Use as counter helper when leveling kanmasu in online browser game "KanColle". F
 * Save, load and reset counter.
 * Decreasing and Increasing with button or manual typing.
 * Auto pop prompt dialog to reset counter to default (set as 12) when counter reach to zero.
+* Noticeable how many time remain when under sortie with counter on title bar.
 * *Have night mode for who like dark theme.
 * *No internet is required.
 
