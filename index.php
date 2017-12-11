@@ -173,6 +173,10 @@ function load(){
 	var mo = $("#message-outpost");
 	
 	var v = parseInt(localStorage.getItem("counter"));
+
+	if (!$.isNumeric(v)){
+		v = 0;
+	}
 	
 	ic.val(v);
 	change_title(ic.val());
