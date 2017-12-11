@@ -6,7 +6,7 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/jquery-ui.js"></script>
-		<title>KanColle leveling round counter - Decreasing type</title>
+		<title id="head-title">12 time(s) remaining KanColle leveling round counter - Decreasing type</title>
 	</head>
 	<body style="font-size: 16px;">
 		<h2 id="title" style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); z-index: 3; color: white;">
@@ -82,6 +82,13 @@ $(document).on("ready", function(){
 		}
 	}
 });
+
+function change_title(counter){
+	var ht = $("#head-title");
+	var dh = "KanColle leveling round counter - Decreasing type";
+
+	ht.html(counter+" time(s) remaining "+dh);
+}
 	
 function shiftmode() {
 	var sb = $("#shiftmode");
@@ -128,6 +135,7 @@ function checkvalue(event){
 	if (v < 0){
 		ic.val(0);
 	}
+	change_title(ic.val());
 }
 	
 function checknull(event){
@@ -137,6 +145,7 @@ function checknull(event){
 	if (v == '' || v == null){
 		ic.val(0);
 	}
+	change_title(ic.val());
 }
 	
 function save(){
@@ -166,6 +175,7 @@ function load(){
 	var v = parseInt(localStorage.getItem("counter"));
 	
 	ic.val(v);
+	change_title(ic.val());
 	disabled();
 	
 	mo.fadeOut(1, function(){
@@ -184,6 +194,7 @@ function reset(){
 	var mo = $("#message-outpost");
 	
 	ic.val(12);
+	change_title(ic.val());
 	localStorage.setItem("counter", "12");
 	disabled();
 	
@@ -208,6 +219,7 @@ function minus(){
 		askreset();
 		ic.val(0);
 	}
+	change_title(ic.val());	
 }
 	
 function plus(){
@@ -215,6 +227,7 @@ function plus(){
 	var v = ic.val();
 	
 	ic.val(parseInt(v)+1);
+	change_title(ic.val());
 }
 	
 function askreset(){
