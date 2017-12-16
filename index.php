@@ -11,6 +11,11 @@
 	<body style="font-size: 16px;">
 		<h2 id="title" style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); z-index: 3; color: white;">
 			KanColle leveling round counter - Decreasing type
+			<br />
+			<div style="margin-top: 2rem; text-align: center;">
+				<div id="times-outpost" style="margin-right: 1rem; display: inline-block;">12</div>
+				time(s) remaining
+			</div>
 		</h2>
 		<div id="container" style="position: relative; height: 100%; width: 100%; background: black; z-index: 1;">
 			<div id="panel-wrap" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid whitesmoke; border-radius: 6px; padding: 3rem; width: 52.6%; background: lightgrey;">
@@ -85,9 +90,11 @@ $(document).on("ready", function(){
 
 function change_title(counter){
 	var ht = $("#head-title");
+	var to = $("#times-outpost");
 	var dh = "KanColle leveling round counter - Decreasing type";
 
 	ht.html(counter+" time(s) remaining "+dh);
+	to.html(counter);
 }
 	
 function shiftmode() {
