@@ -3,14 +3,15 @@ Use as counter helper when leveling kanmasu in online browser game "KanColle". F
 
 * Save, load and reset counter.
 * Decreasing and Increasing with button or manual typing.
-* Auto pop prompt dialog to reset counter to default (set as 12) when counter reach to zero.
+* Auto pop prompt dialog to reset counter to default when counter reach to zero.
 * Noticeable how many time remain when under sortie with counter on title bar.
+* Default counter can be changed.
 * *No internet is required.
 * **Have night mode for who like dark theme.
 
 Note
 * *Required server environments to operate for php file, you may use software like XAMPP, AppServ or similar to create local server environments then php file can be operated.
-* **Have night mode for who like dark theme and it can swap between night and normal mode with ability to save chosen mode automatically.
+* **It can swap between night and normal mode, save chosen mode automatically.
 
 May adding more feature in future.
 
